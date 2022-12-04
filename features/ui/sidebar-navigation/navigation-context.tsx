@@ -8,8 +8,6 @@ const defaultContext = {
   isSidebarCollapsed: false,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   toggleSidebar: () => {},
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  handleSupportButton: () => {},
 };
 
 export const NavigationContext = React.createContext(defaultContext);
@@ -26,10 +24,6 @@ export function NavigationProvider({
       value={{
         isSidebarCollapsed,
         toggleSidebar: () => setSidebarCollapsed((isCollapsed) => !isCollapsed),
-        handleSupportButton: () => {
-          window.location.href =
-            "mailto:support@prolog-app.com?subject=Support Request:";
-        },
       }}
     >
       {children}
